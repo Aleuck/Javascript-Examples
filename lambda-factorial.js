@@ -1,3 +1,7 @@
+// This is an example that shows how Javascript functions can be used to perfectly translate any lambda term.
+// Note that this function is extremely complex and hard to read. It is just a example for educational purposes.
+// You should never do something like this when developing applications
+
 // Wrapping the whole function in parenthesis to make it a function expression, 
 // because function statements can't be anonymous.
 (function (x) {
