@@ -16,3 +16,6 @@
         }
     }));
 } (5));
+
+// Same thing with arrow notation
+(x => (g => g(g)(x))(f => y => y <= 1 ? 1 : y * f(f)(y - 1)))(5);
