@@ -4,18 +4,16 @@
 
 // Wrapping the whole function in parenthesis to make it a function expression, 
 // because function statements can't be anonymous.
-(function (x) {
-    return (function (g) {
-        return g(g)(x);
-    }(function (f) { // this is the function that is being passed as a parameter to the previous.
-        return function (y) {
-            if (y <= 1) {
-                return 1; // base case
-            }
-            return y * f(f)(y - 1) // recursion definition
+(function (g) {
+    return g(g);
+})(function (f) { // this is the function that is being passed as a parameter to the previous.
+    return function (x) {
+        if (x <= 1) {
+            return 1; // base case
         }
-    }));
-} (5));
+        return x * f(f)(x - 1) // recursion definition
+    }
+})(5);
 
 // Same thing with arrow notation
-(x => (g => g(g)(x))(f => y => y <= 1 ? 1 : y * f(f)(y - 1)))(5);
+(g => g(g)) (f => x => x <= 1 ? 1 : x * f(f)(x - 1)) (5);
